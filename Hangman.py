@@ -6,7 +6,7 @@ six_to_nine = list(filter(lambda x: len(x) >= 6 and len(x) < 9, word))
 nine_or_more = list(filter(lambda x: len(x) >= 9, word))
 
 level = ()
-lives = 0
+lifes = 0
 game_word = []
 
 while True:
@@ -20,23 +20,23 @@ while True:
 
 if level == 1:
     game_word = random.choice(five_or_less)
-    lives = 10
+    lifes = 10
 elif level == 2:
     game_word = random.choice(six_to_nine)
-    lives = 8
+    lifes = 8
 elif level == 3:
     game_word = random.choice(nine_or_more)
-    lives = 6
+    lifes = 6
 
 wrong_guess = []
 right_guess = []
 
-#n_try = input("How many lives you want to have: )
+#n_try = input("How many lifes you want to have: )
 word_size = int(len(game_word))
 
 blank = ["_"] * word_size
 print("_" * word_size)
-print("\n Number of lives= ", lives)
+print("\n Number of lifes= ", lifes)
 
 def indices(game_word, guess):
     return [i for i, x in enumerate(game_word) if x == guess]
@@ -60,14 +60,14 @@ while True:
                         print("\n",''.join(blank).upper(), "\n")
                 else:
                     print("\n *OH, WRONG LETTER*")
-                    lives = lives - 1
-                    print("\n Lives: ", lives, "\n")
+                    lifes = lifes - 1
+                    print("\n Lifes: ", lifes, "\n")
                     print(''.join(blank).upper())
                     wrong_guess.append(guess)
                     print("\n Wrong guesses: " , wrong_guess, "\n")
 
 
-                if lives == 0:
+                if lifes == 0:
                     print("\n **I'M SORRY YOU LOST** \n")
                     print("The right word was: " , game_word)
                     break
