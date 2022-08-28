@@ -80,18 +80,3 @@ while True:
             print("\nYou already tried this letter \n")
     else:
         print("\n **Please, type letters in lower case or '-'** ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
